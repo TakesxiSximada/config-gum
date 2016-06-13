@@ -7,6 +7,7 @@ all: git
 git:
 	-ln -sf $(CURDIR)/git/gitconfig ~/.gitconfig
 	-ln -sf $(CURDIR)/git/gitignore ~/.gitignore
+	-ln -sf $(CURDIR)/git/git_template ~/.git_template
 	-ln -sf $(CURDIR)/git/gitconfig.local ~/.gitconfig.local
 
 
