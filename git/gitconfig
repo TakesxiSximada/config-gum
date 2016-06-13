@@ -1,0 +1,15 @@
+[core]
+    excludesfile = ~/.gitignore
+
+[include]
+    path = ~/.gitconfig.local
+
+[alias]
+    *many alias*
+
+[color]
+    ui = true
+    diff = true
+
+[push]
+    default = simple
