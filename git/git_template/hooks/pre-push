@@ -15,13 +15,3 @@ do
         exit 1
     fi
 done
-
-branch="$(git symbolic-ref HEAD 2>/dev/null)" || \
-    "$(git describe --contains --all HEAD)"
-
-if [ "${branch##refs/heads/}" = "master" ]; then
-    echo "Do not commit on the master branch!"
-    echo "Get wild and tough!"
-    afplay ~/.git_template/hooks/get-wild.mp3 -q 1
-    exit 1
-fi
