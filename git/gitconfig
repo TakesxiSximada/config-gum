@@ -5,7 +5,6 @@
     path = ~/.gitconfig.local
 
 [alias]
-    *many alias*
 
 [color]
     ui = true
