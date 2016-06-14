@@ -3,6 +3,11 @@
 all: git
 	echo OK
 
+.PHONY: getwild
+getwild:
+	-ln -sf $(CURDIR)/getwild/getwildrc ~/.getwildrc
+	-ln -sf $(CURDIR)/getwild/getwild ~/.getwild
+
 .PHONY: git
 git:
 	-ln -sf $(CURDIR)/git/gitconfig ~/.gitconfig
