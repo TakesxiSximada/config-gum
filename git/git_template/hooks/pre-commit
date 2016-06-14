@@ -11,7 +11,14 @@ branch="$(git symbolic-ref HEAD 2>/dev/null)" || \
 
 if [ "${branch##refs/heads/}" = "master" ]; then
     echo "Do not commit on the master branch!"
-    echo "Get wild and tough!"
-    afplay ~/.git_template/hooks/get-wild.mp3 -q 1
+    echo "Get wild and tough!!"
+    if [ -f $GET_WILD_PATH ]; then
+        afplay $GET_WHILD_PATH -q 1
+    else
+        echo "Not found Get wild and tough!!"
+        echo "set environment variable GET_WILD_PATH."
+        echo "ex)"
+        echo "export GET_WILD_PATH=/path/to/get_wild.m4a"
+    fi
     exit 1
 fi

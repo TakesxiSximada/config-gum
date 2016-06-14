@@ -9,9 +9,16 @@ while read local_ref local_sha1 remote_ref remote_sha1
 do
     if [[ "${remote_ref##refs/heads/}" =~ $PROTECTED_BRANCHES && "$PUSH_COMMAND" =~ $FORCE_PUSH ]]; then
         echo "This force-push to the ${remote_ref##refs/heads/} branch has been blocked."
-        echo "Get wild and tough!"
+        echo "Get wild and tough!!"
         # mac なら 標準装備の afplay で音楽再生可能
-        afplay ~/.git_template/hooks/get-wild.mp3 -q 1
+        if [ -f $GET_WILD_PATH ]; then
+            afplay $GET_WHILD_PATH -q 1
+        else
+            echo "Not found Get wild and tough!!"
+            echo "set environment variable GET_WILD_PATH."
+            echo "ex)"
+            echo "export GET_WILD_PATH=/path/to/get_wild.m4a"
+        fi
         exit 1
     fi
 done
